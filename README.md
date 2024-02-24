@@ -20,21 +20,21 @@ Small utility to send custom emails using [SendGrid](https://sendgrid.com/) plat
       .addRecipient("foo2@gmail.com","Foo2")
       .addCC("foo3@gmail.com", "Foo3")
       .Subject = "SendGrid Test"
-      .Boddy = "This is a test email"
-      .appendToBody(" from SendGrid library")
+      .Body = "This is a test email"
+      .appendBody(" from SendGrid library")
       .addAttachment("c:\folder\file1.bmp")
       .addAttachment("c:\folder\file2.bmp","application/octet","logo.bmp")
       .addInlineAttchment("c:\folder\file3.txt","text/plain")
     ENDWITH
     
-    LOCAL oResp
-    oResp = SG.Send(oMsg)
+    LOCAL lResult
+    lResult = SG.Send(oMsg)
     
-    IF oResp.result
+    IF lResult
        ??"SENT!"
     ELSE
-       FOR i = 1 TO oResp.Errors.Count
-          ?oResp.Errors(i).MEssage, oResp.Errors(i).Field, oResp.Errors(i).Help
+       FOR i = 1 TO SG.Errors.Count
+          ?SG.Errors(i).MEssage, SG.Errors(i).Field, SG.Errors(i).Help
        ENDFOR
     ENDIF
 
@@ -44,5 +44,6 @@ Just use *htmlBody* property and *appendHtmlBody()* methods, instead of *Body* a
 ### CHANGE HISTORY
 |DATE         |USER|COMMENTS           |
 |-------------|----|------------------ |
+|FEB 24, 2024 |VES |Some outdated documentation fixed |
 |APR 16, 2022 |VES |Initial version    |
 
