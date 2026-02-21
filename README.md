@@ -4,8 +4,8 @@
 Small utility to send custom emails using [SendGrid](https://sendgrid.com/) platform.  The SendGrid platform free plan allows you to send up to 100 emails every day, so its really helpfull for simple applications.  To use the platform:
 
 1. Create a new account with free plan
-2. Creates a sender
-3. Creates an API key
+2. Create a sender
+3. Create an API key
 
 
 ### USAGE
