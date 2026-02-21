@@ -24,7 +24,7 @@ Small utility to send custom emails using [SendGrid](https://sendgrid.com/) plat
       .appendBody(" from SendGrid library")
       .addAttachment("c:\folder\file1.bmp")
       .addAttachment("c:\folder\file2.bmp","application/octet","logo.bmp")
-      .addInlineAttchment("c:\folder\file3.txt","text/plain")
+      .addInlineAttachment("c:\folder\file3.txt","text/plain")
     ENDWITH
     
     LOCAL lResult
